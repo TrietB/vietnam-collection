@@ -138,7 +138,7 @@ function MainHeader() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -154,8 +154,8 @@ function MainHeader() {
               textDecoration: "none",
             }}
           >
-            LOGO
-          </Typography>
+            VIETNAM COLLECTIONS
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => {
               return (
