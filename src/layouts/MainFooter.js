@@ -40,44 +40,60 @@ function MainFooter() {
   } = methods;
 
   const onSubmit = async (data) => {
-    let { email, name } = data;
+    let { email } = data;
 
-    console.log(email, name);
+    console.log(email);
   };
   return (
     <Container sx={{ bgcolor: "#004c4c" }} maxWidth={false}>
-      <Grid container maxWidth={"100%"} spacing={4}>
-        <Grid item sx={{ color: "white", mt: 2 }} md={6}>
-          <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
-            {/* <Stack
-              spacing={3}
+      <Grid container maxWidth={"100%"} spacing={3}>
+        <Grid item sx={{ color: "white", mt: 2 }} md={6} xs={12}>
+          {/* <Stack
+              spacing={5}
               sx={{
                 "& .MuiTextField-root": { bgcolor: "white", borderRadius: 1 },
               }}
             > */}
-            <Box
-              sx={{
-                "& .MuiTextField-root": { bgcolor: "white", borderRadius: 1 },
-              }}
-            >
-              <Typography variant="h5">Subscribe for NewsLetter</Typography>
+          <Box
+            sx={{
+              "& .MuiTextField-root": { bgcolor: "white", borderRadius: 1 },
+              "& .MuiFormHelperText-root": {
+                position: "absolute",
+                bottom: "-20px",
+                left: 0,
+                bgcolor: "white",
+              },
+            }}
+          >
+            <Typography sx={{ mb: 2 }} variant="h5">
+              Subscribe for Newsletter
+            </Typography>
+            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
               <FTextField
                 name={"email"}
                 label={"Your Email"}
                 variant={"filled"}
+                fullWidth={false}
               />
               <Button
                 startIcon={<SendIcon />}
                 variant="contained"
                 type="submit"
+                sx={{ ml: 2, minHeight: "56px" }}
               >
                 Send
               </Button>
-            </Box>
-            {/* </Stack> */}
-          </FormProvider>
+            </FormProvider>
+          </Box>
+          {/* </Stack> */}
         </Grid>
-        <Grid item sx={{ color: "white" }} md={6}>
+        <Grid item sx={{ color: "white", mt: 2 }} md={3}>
+          <ListItem>hello</ListItem>
+          <ListItem>hello</ListItem>
+          <ListItem>hello</ListItem>
+          <ListItem>hello</ListItem>
+        </Grid>
+        <Grid item sx={{ color: "white", mt: 2 }} md={3}>
           <ListItem>hello</ListItem>
           <ListItem>hello</ListItem>
           <ListItem>hello</ListItem>

@@ -5,12 +5,15 @@ import "./App.css";
 import Router from "./routes";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import ThemeProvider from "./theme";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <Router />
+        <ThemeProvider>
+          <Router />
+        </ThemeProvider>
       </BrowserRouter>
     </AuthProvider>
   );
