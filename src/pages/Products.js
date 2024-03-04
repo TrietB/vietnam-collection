@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Grid,
   List,
@@ -8,6 +9,7 @@ import {
   ListItemText,
   Paper,
   Typography,
+  styled,
 } from "@mui/material";
 import React from "react";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -18,24 +20,47 @@ const categories = [
   { name: "category 3" },
 ];
 
+const ResponsiveList = styled(List)(({ theme }) => ({
+  [theme.breakpoints.up("xs")]: {
+    // width: "100%",
+    color: "red",
+    display: "flex",
+    flexDirection: "row",
+  },
+  [theme.breakpoints.up("sm")]: {
+    // maxWidth: "600px",
+    // width: "100%",
+    color: "blue",
+    flexDirection: "column",
+  },
+  [theme.breakpoints.up("md")]: {
+    color: "pink",
+    // width: "100%",
+    // maxWidth: "900px",
+    flexDirection: "column",
+  },
+}));
 function Products() {
   return (
-    <Container sx={{ mt: 5 }}>
+    <Container sx={{ mt: 3 }}>
       <Grid container spacing={4}>
-        <Grid item xs={0} md={3}>
+        <Grid item xs={12} md={3}>
           <Paper elevation={1} sx={{ padding: 5 }}>
-            <List>
+            {/* <List>
+              
+            </List> */}
+            <ResponsiveList>
               {categories.map((category) => {
                 return (
-                  <ListItem sx={{ padding: 0 }}>
-                    <ListItemIcon>
+                  <ListItem sx={{ padding: 0 }} key={category.name}>
+                    {/* <ListItemIcon>
                       <ChevronRightIcon />
-                    </ListItemIcon>
+                    </ListItemIcon> */}
                     <ListItemText primary={category.name} />
                   </ListItem>
                 );
               })}
-            </List>
+            </ResponsiveList>
           </Paper>
         </Grid>
         <Grid item xs={12} md={9}>

@@ -46,26 +46,26 @@ function MainFooter() {
   };
   return (
     <Container sx={{ bgcolor: "#004c4c" }} maxWidth={false}>
-      <Grid container maxWidth={"100%"} spacing={3}>
+      <Grid
+        container
+        maxWidth={"100%"}
+        spacing={3}
+        sx={{ alignItems: "center", justifyContent: "center" }}
+      >
         <Grid item sx={{ color: "white", mt: 2 }} md={6} xs={12}>
-          {/* <Stack
-              spacing={5}
-              sx={{
-                "& .MuiTextField-root": { bgcolor: "white", borderRadius: 1 },
-              }}
-            > */}
           <Box
             sx={{
-              "& .MuiTextField-root": { bgcolor: "white", borderRadius: 1 },
+              "& .MuiTextField-root": { bgcolor: "white", borderRadius: 0 },
               "& .MuiFormHelperText-root": {
                 position: "absolute",
                 bottom: "-20px",
                 left: 0,
                 bgcolor: "white",
+                border: 0,
               },
             }}
           >
-            <Typography sx={{ mb: 2 }} variant="h5">
+            <Typography sx={{ mb: 2, mt: 3 }} variant="h5">
               Subscribe for Newsletter
             </Typography>
             <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
@@ -73,7 +73,8 @@ function MainFooter() {
                 name={"email"}
                 label={"Your Email"}
                 variant={"filled"}
-                fullWidth={false}
+                // fullWidth={false}
+                sx={{ maxWidth: "calc(100% - 200px)" }}
               />
               <Button
                 startIcon={<SendIcon />}
@@ -85,19 +86,18 @@ function MainFooter() {
               </Button>
             </FormProvider>
           </Box>
-          {/* </Stack> */}
         </Grid>
-        <Grid item sx={{ color: "white", mt: 2 }} md={3}>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
+        <Grid item sx={{ color: "white", mt: 2, mb: 3 }} md={3}>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
         </Grid>
-        <Grid item sx={{ color: "white", mt: 2 }} md={3}>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
-          <ListItem>hello</ListItem>
+        <Grid item sx={{ color: "white", mt: 2, mb: 3 }} md={3}>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
+          <ListItem>Lorem ipsum dolor sit amet</ListItem>
         </Grid>
       </Grid>
 
