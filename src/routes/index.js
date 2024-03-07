@@ -8,7 +8,7 @@ import BlankLayout from "../layouts/BlankLayout";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import NotFoundPage from "../pages/NotFoundPage";
-import Products from "../pages/Products";
+import ProductPage from "../pages/ProductPage";
 
 function Router() {
   return (
@@ -24,7 +24,7 @@ function Router() {
         <Route index element={<HomePage />} />
         <Route path="account" element={<AccountPage />} />
         <Route path="user/:userid" element={<UserProfilePage />} />
-        <Route path="products" element={<Products />} />
+        <Route path="products" element={<ProductPage />} />
       </Route>
 
       <Route element={<BlankLayout />}>

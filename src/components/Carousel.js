@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Typography } from "@mui/material";
+import { Paper, Button, Typography, Box } from "@mui/material";
 
 function HomePageCarousel({ items }) {
   //   var items = [
@@ -35,14 +35,21 @@ function HomePageCarousel({ items }) {
 function Item(props) {
   return (
     <Paper
-      sx={{ position: "relative", zIndex: 1000, height: "500px" }}
+      sx={{ position: "relative", zIndex: 1000, height: "100%" }}
       elevation={0}
     >
-      <img
+      {/* <img
         style={{ width: "100%", height: "500px" }}
+        // style={{ backgroundSize: "cover" }}
         alt="test pic"
         src={props.item.img}
-      />
+      /> */}
+      <Box
+        component="img"
+        src={props.item.img}
+        alt="test"
+        sx={{ width: "100%", height: "500px" }}
+      ></Box>
 
       <Button
         sx={{
