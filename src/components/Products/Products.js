@@ -79,7 +79,11 @@ function Products() {
           >
             {collections.map((item) => {
               console.log(item);
-              return <ProductCard props={item}></ProductCard>;
+              return (
+                <Grid item xs={12} sm={6} md={4} lg={3}>
+                  <ProductCard item={item}></ProductCard>
+                </Grid>
+              );
             })}
           </Grid>
         </Grid>

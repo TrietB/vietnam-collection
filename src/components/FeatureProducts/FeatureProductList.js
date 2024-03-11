@@ -49,7 +49,11 @@ function FeatureProductList() {
       </Typography>
       <Grid container spacing={3}>
         {collections.map((item) => {
-          return <FeatureItem props={item} />;
+          return (
+            <Grid item lg={3} md={4} sm={6} xs={6}>
+              <FeatureItem item={item} />
+            </Grid>
+          );
         })}
       </Grid>
     </Container>
